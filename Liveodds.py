@@ -62,7 +62,7 @@ with open("B365Log.txt", "a") as logf:
             if len(lastodds) == 0:
                 lastodds.append(b365Odds[0])
                 lastodds.append(b365Odds[1])
-                logf.write("{0}: {1} {2} {3} {4}\n".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                logf.write("{0}: {1} {2} {3} {4}\n".format(datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S"),
                                                        b365Odds[2], b365Odds[0], b365Odds[3], b365Odds[1]))
 
                 print(b365Odds[2], b365Odds[0], b365Odds[3], b365Odds[1])
@@ -71,7 +71,7 @@ with open("B365Log.txt", "a") as logf:
                 os.fsync()
             
             if b365Odds[0] != lastodds[0] or b365Odds[1] != lastodds[1]:
-                logf.write("{0}: {1} {2} {3} {4}\n".format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                logf.write("{0}: {1} {2} {3} {4}\n".format(datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S"),
                                                        b365Odds[2], b365Odds[0], b365Odds[3], b365Odds[1]))
 
                 lastodds[0] = b365Odds[0]
